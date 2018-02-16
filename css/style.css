@@ -1,6 +1,6 @@
 body,
 p {
-    background-image: url('/img/backgroundSudoku.jpg');
+    background-image: url('../img/backgroundSudoku.jpg');
     background-repeat: no-repeat;
     height: 100%;
     background-size: cover;
