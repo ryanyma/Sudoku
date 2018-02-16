@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Sudoku</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type='text/javascript' > 
+    var SOLVE = false; 
+  </script>
+  <script language="javascript" src="js/solver.js"></script>
+  <script language="javascript" src="js/board.js"></script>
+  <script language="javascript" src="js/sudoku_generate.js"></script>
+</head>
+<body onLoad='drawBoard();'>
+    <div class="container">
+        <h1 id="title">Sudoku</h1>
+        <div style="text-align: left; padding: 0 20px 20px 20px;">   
+        </div>
+        <div class="board-block">
+          <table>
+            <tr style="vertical-align: top ">
+              <td>
+                <span id="9x9"></span>
+              </td>
+            </tr>
+          </table>
+          <div style="padding-top: 15px;">
+            <div>
+              <input type="button" id = "button" class="btn btn-primary btn-sm" value="Solve" onClick="solve();">
+              <input type="button" id = "button" class="btn btn-info btn-sm" value="Validate" onClick="validateBoard();">
+              <input type="button" id = "button" class="btn btn-warning btn-sm" value="Clear" onClick="clearBoard();">
+              <input type="button" id = "button" class="btn btn-danger btn-sm" value="Reset"onClick="initCells(sudokuGenerate.generate(36));">
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+<script type="text/javascript">
+    function isNumberKey(event){
+        var charCode = (event.which) ? event.which : event.keyCode;
+        if (charCode > 31 && (charCode < 49 || charCode > 57))
+            return false;
+        return true;
+    }
+</script>
+</html>

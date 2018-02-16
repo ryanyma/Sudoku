@@ -1,0 +1,124 @@
+body,
+p {
+    background-image: url('/img/backgroundSudoku.jpg');
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    background-position: center; 
+    opacity: 0.98;
+}
+
+#title {
+    font-family: 'Raleway', sans-serif;
+    font: 12px;
+    color: white;
+}
+
+a,
+a:visited {
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  padding: 20px 0;
+
+  margin: auto;
+  
+  border-radius: 10px;
+
+}
+
+table {
+  position: relative;
+  margin: 0 auto;
+color: white;
+width: 400px;
+height: 400px;
+color: linear-gradient(0deg, #ffc87b 0%, #865eeb 100%);
+opacity: 0.95;
+}
+
+.board-block {
+  position: relative;
+
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.input {
+  border: 0px;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font: 12px;
+}
+
+.cell {
+  width: 1em;
+  height: 1em;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  padding: 0.3em
+  
+}
+
+.cell1 {
+  width: 1em;
+  height: 1em;
+  border-bottom: 2px solid;
+  border-left: 1px solid;
+  padding: 0.3em
+  
+}
+
+.cell2 {
+  width: 1em;
+  height: 1em;
+  border-bottom: 1px solid;
+  border-left: 2px solid;
+  padding: 0.3em
+}
+
+.cell3 {
+  width: 1em;
+  height: 1em;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  padding: 0.3em
+}
+
+.table {
+    
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-collapse: collapse;
+  border-radius: 50px;
+}
+
+
+input[type="button"] {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font: 12px;
+    margin: 15px;
+    background: none;
+    border-color: white;
+}
+
+#button:hover, #button:focus, #button:active, #button.active, .open>.dropdown-toggle.btn-primary {
+    color: #F7A9B8;
+    background: none;
+    border-color: #F7A9B8;
+}
+ 
