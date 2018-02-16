@@ -3,12 +3,19 @@
 function SudokuSolver() {
     var puzzleArray = [];
     
-    /* 
+   /**
     * check if the value is a valid candidate by checking:
     * if it is unique within a row
     * if it is unique within a column
     * if it in unique within the 3 x 3 box
-    */
+    * This method is always used in conjunction with isValidBoard to check the 
+    * validity of every cell within the game board
+    *
+	* @param  {number} val the value the cell
+	* @param  {number} row the row of the cell 
+    * @param  {number} col the column of the cell
+    * @return          true or false depending whether or not the cell is valid
+	*/
 	function isValidCell(val, row, col) {
 		for (var i = 0; i < 9; i++) {
             // (1, 0, 0)
@@ -22,9 +29,15 @@ function SudokuSolver() {
 		return true;
     }
     
-    /* 
+   /**
     * Recursively test all numbers ranging from 1 - 9 for a given cell 
     * until the puzzle is solved
+    * This method is called once starting at index 0, and it will recursively iterate
+    * through the entire board. Once it has passed isValidCell(val, row, col) for 
+    * every cell, the method returns true or false.
+    *
+	* @param  {number} cell the index of the cell
+    * @return             true or false depending whether or not the the entire game board is valid
     */
 	function isValidBoard(cell) {
 		if (cell >= puzzleArray.length) {
@@ -43,14 +56,23 @@ function SudokuSolver() {
         }
 		puzzleArray[cell] = 0;
 		return false;
-	}
-
+    }
+    
+   /**
+    * Recursively test all numbers ranging from 1 - 9 for a given cell 
+    * until the puzzle is solved
+    * This method uses isValidBoard(cell) to return whether or not the board is solvable.
+    * It returns the appropriate alert message according to the value returned.
+    *
+    * @param  {number} puzzle the entire array of the game board
+    * @param  {number} validate the option to validate the board
+    * @return             true or false depending whether or not the the entire game board is solvable
+    */
 	this.solve = function(puzzle, validate) {
         //if the value is not a number then replace it with 0 
 		puzzleArray = puzzle.split('').map(function (v) { 
             return isNaN(v) ? 0 : +v
         });
-        console.log(puzzleArray);
         if (puzzle.length !== 81) return 'Puzzle is not valid.'
         if (validate && !SOLVE) {
             return !isValidBoard(0) ? alert('Your current board is incorrect.') : alert('You got this. Keep trying!');
