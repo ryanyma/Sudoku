@@ -4,7 +4,7 @@ var sudokuSolver = new SudokuSolver();
 /**
 * Initializes a string numbers present on the game board 
 *
-* @return             the string of numbers present on the game board
+* @return the string of numbers present on the game board
 */
 function initPuzzle() {
   var s = '';
@@ -22,7 +22,7 @@ function initPuzzle() {
 /**
 * Populates the game board with the values generated from the solve function in solver.js
 *
-* @return             populated game board
+* @return populated game board
 */
 function solve() {
   var puzzleString = initPuzzle();
@@ -41,7 +41,7 @@ function solve() {
 * the numbers that came from generating a valid Sodoku board.
 *
 * @param  {string} puzzle the string of numbers on the game board
-* @return             populated game board
+* @return            populated game board
 */
 function initCells(puzzle) {
     if (puzzle != null && puzzle.length >= PUZZLE_LENGTH) {
@@ -57,10 +57,11 @@ function initCells(puzzle) {
       }
     }
   }
+
 /**
 * This method renders the board on the screen with a table, 9 different row sections, and 81 input fields.
 *
-* @return             table with row sections and input fields that hold the value of the hard coded Sodoku board
+* @return table with row sections and input fields that hold the value of the hard coded Sodoku board
 */
   function drawBoard() {
     var s = '<table class="table">\n';
@@ -95,11 +96,12 @@ function initCells(puzzle) {
     var puzzleString = initPuzzle();
     sudokuSolver.solve(puzzleString, 1);
   }
+
 /**
 * This method sets the SOLVE global variable to false since the board will be cleared.
 * This method removes every cell that does not have the "disabled" attribute set to be true.
 *
-* @return             a game board with only generated values
+* @return a game board with only generated values
 */
   function clearBoard() {
     SOLVE = false;

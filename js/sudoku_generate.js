@@ -46,7 +46,7 @@ function SudokuGenerate () {
 /**
 * Sets this.sudoku to a hard coded valid Sudoku board that will be used for Sudoku generation.
 *
-* @return             solved, valid Sudoku board
+* @return solved, valid Sudoku board
 */
   this.sudokuTemplate = function() {
     this.sudoku = [
@@ -79,6 +79,7 @@ function SudokuGenerate () {
       }
     }
   }
+  
 /**
 * Swaps the two rows passed in the parameter
 *
